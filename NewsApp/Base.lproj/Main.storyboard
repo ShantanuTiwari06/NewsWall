@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SxC-zx-tN0">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Smart News App-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fW3-JF-CPg">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="aMC-RI-ufq">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fW3-JF-CPg" secondAttribute="trailing" id="CTG-7n-RCr"/>
+                            <constraint firstItem="aMC-RI-ufq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V7u-BE-Xd2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fW3-JF-CPg" secondAttribute="bottom" id="Zl3-HG-g2H"/>
+                            <constraint firstItem="aMC-RI-ufq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ztc-bf-CB5"/>
+                            <constraint firstItem="aMC-RI-ufq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cyO-1i-5z6"/>
+                            <constraint firstItem="fW3-JF-CPg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lE7-qC-fr0"/>
+                            <constraint firstItem="aMC-RI-ufq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tDc-VG-QuM"/>
+                            <constraint firstItem="fW3-JF-CPg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wgI-dV-acu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Smart News App" id="KWf-X1-w5A">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="OZh-BZ-cx7"/>
+                        <barButtonItem key="rightBarButtonItem" image="arrow.clockwise" catalog="system" id="hWF-Sj-cjs">
+                            <connections>
+                                <action selector="reloadTapped:" destination="BYZ-38-t0r" id="ryd-oC-gb1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activtyIndicator" destination="aMC-RI-ufq" id="bxv-Z0-3oa"/>
+                        <outlet property="newstableview" destination="fW3-JF-CPg" id="ySt-1m-7m6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Full NewsVC-->
+        <scene sceneID="H2P-su-0V9">
+            <objects>
+                <viewController storyboardIdentifier="FullNewsVC" id="rIp-CQ-Tha" customClass="FullNewsVC" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4le-yA-Vd3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQV-53-hAw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GlD-7Y-9QH">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="f3N-5f-X68"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GlD-7Y-9QH" firstAttribute="centerY" secondItem="4le-yA-Vd3" secondAttribute="centerY" id="5FJ-jm-nuj"/>
+                            <constraint firstItem="hQV-53-hAw" firstAttribute="leading" secondItem="f3N-5f-X68" secondAttribute="leading" id="Aj9-AZ-qyq"/>
+                            <constraint firstItem="hQV-53-hAw" firstAttribute="top" secondItem="f3N-5f-X68" secondAttribute="top" id="BCw-Wl-O5Z"/>
+                            <constraint firstItem="f3N-5f-X68" firstAttribute="trailing" secondItem="hQV-53-hAw" secondAttribute="trailing" id="Ggx-Pz-9am"/>
+                            <constraint firstItem="GlD-7Y-9QH" firstAttribute="centerX" secondItem="4le-yA-Vd3" secondAttribute="centerX" id="MWA-8x-zq0"/>
+                            <constraint firstItem="f3N-5f-X68" firstAttribute="bottom" secondItem="hQV-53-hAw" secondAttribute="bottom" id="hmK-dt-4C5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loader" destination="GlD-7Y-9QH" id="XZO-Ge-zA5"/>
+                        <outlet property="webview" destination="hQV-53-hAw" id="0dk-7r-xmp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jNR-Mk-OIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1831.2" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jvV-1Z-9Lb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SxC-zx-tN0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jpt-J1-BNg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HXA-wI-LBI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qxx-g8-GYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="169" y="134"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
